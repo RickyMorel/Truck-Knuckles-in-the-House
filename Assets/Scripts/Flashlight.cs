@@ -13,23 +13,30 @@ public class Flashlight : MonoBehaviour
 
     private Transform flashlightTransform;
 
+    [SerializeField]AudioClip flashLightOn;
+    [SerializeField]AudioClip flashLightOff;
+    AudioSource audioSource;
     private void Start()
     {
         flashlightTransform = transform;
-
-        if (targetObject == null)
-        {
-            Debug.LogError("Target Object is not assigned. Please assign a target object for the flashlight to follow.");
-        }
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && enabled == false)
         {
             gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+            audioSource.clip = flashLightOn;
+            audioSource.Play();
         }
-        
+        if (Input.GetKeyDown(KeyCode.Q) && enabled == true)
+        {
+            gameObject.GetComponent<Light>().enabled = !gameObject.GetComponent<Light>().enabled;
+            audioSource.clip = flashLightOff;
+            audioSource.Play();
+        }
+
         flashlightTransform.position = Vector3.Lerp(
             flashlightTransform.position,
             targetObject.position,
