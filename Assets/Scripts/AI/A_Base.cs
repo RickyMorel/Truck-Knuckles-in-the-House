@@ -11,4 +11,9 @@ public class A_Base : MonoBehaviour
     {
 
     } 
+
+    public virtual void CheckSwitchAction()
+    {
+
+    }
 }
