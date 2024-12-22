@@ -6,7 +6,7 @@ public class Flashlight : MonoBehaviour
 {
     [Header("References")]
     public Transform targetObject; 
-
+    
     [Header("Smooth Settings")]
     public float positionSmoothSpeed = 5f; 
     public float rotationSmoothSpeed = 5f; 
@@ -18,6 +18,7 @@ public class Flashlight : MonoBehaviour
     AudioSource audioSource;
     private void Start()
     {
+       
         flashlightTransform = transform;
         audioSource = GetComponent<AudioSource>();
     }
