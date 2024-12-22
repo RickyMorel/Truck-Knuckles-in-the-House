@@ -18,8 +18,10 @@ public class A_Patrol : A_Base
 
     #endregion
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         _agent = GetComponent<NavMeshAgent>();
     }
 
@@ -32,7 +34,7 @@ public class A_Patrol : A_Base
 
     public override void DoAction()
     {
-        Debug.Log("currentIndex: " + _currentWaypointIndex);
+        CheckSwitchAction();
         PatrolToWaypoint();
     }
 
@@ -52,5 +54,7 @@ public class A_Patrol : A_Base
     public override void CheckSwitchAction()
     {
         base.CheckSwitchAction();
+
+        if (_aiCues.Player) { _aiStateMachine.DoChase(); }
     }
 }

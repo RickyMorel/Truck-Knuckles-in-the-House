@@ -8,6 +8,8 @@ public class A_Search : A_Base
 {
     #region Editor Fields
 
+    [SerializeField] private int _maxSearchAmount = 2;
+
     #endregion
 
     #region Private Variables
@@ -15,12 +17,15 @@ public class A_Search : A_Base
     private List<SearchPoint> _relevantSearchPoints = new List<SearchPoint>();
     private NavMeshAgent _agent;
     private int _currentSearchIndex;
+    private int _currentSearchAmount;
     private bool _isSearching;
 
     #endregion
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         _agent = GetComponent<NavMeshAgent>();
     }
 
@@ -28,12 +33,15 @@ public class A_Search : A_Base
     {
         base.StartAction();
 
+        _currentSearchAmount = 0;
         _relevantSearchPoints = FindObjectsOfType<SearchPoint>().ToList();
     }
 
     public override void DoAction()
     {
         if(_isSearching) { return; }
+
+        CheckSwitchAction();
 
         PatrolToSearchPoint();
     }
@@ -60,6 +68,8 @@ public class A_Search : A_Base
 
         _isSearching = false;
 
+        _currentSearchAmount++;
+
         _currentSearchIndex++;
 
         if (_currentSearchIndex >= _relevantSearchPoints.Count) { _currentSearchIndex = 0; }
@@ -68,5 +78,8 @@ public class A_Search : A_Base
     public override void CheckSwitchAction()
     {
         base.CheckSwitchAction();
+
+        if(_aiCues.Player) { _aiStateMachine.DoChase(); }
+        else if (_currentSearchAmount >= _maxSearchAmount) { _aiStateMachine.DoPatrol(); }
     }
 }

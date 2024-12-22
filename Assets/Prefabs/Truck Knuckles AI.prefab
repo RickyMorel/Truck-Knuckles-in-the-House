@@ -9,8 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7793107816961250765}
+  - component: {fileID: 2725929718475729878}
   - component: {fileID: 2954150019425192450}
+  - component: {fileID: 4717070694591887728}
   - component: {fileID: 2306009999332051920}
+  - component: {fileID: 9064274634844172853}
+  - component: {fileID: 1065720857048391081}
+  - component: {fileID: 3555371892049252899}
+  - component: {fileID: 5877119865199788972}
   m_Layer: 0
   m_Name: Truck Knuckles AI
   m_TagString: Untagged
@@ -34,6 +40,28 @@ Transform:
   - {fileID: 7838784031040725920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &2725929718475729878
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 4
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &2954150019425192450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +74,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03285d07970fcef4d801093815000fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _actions:
+  - {fileID: 9064274634844172853}
+  - {fileID: 1065720857048391081}
+  - {fileID: 3555371892049252899}
+--- !u!114 &4717070694591887728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd785c0a87169246a21ecb209c3d2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
 --- !u!114 &2306009999332051920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +103,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455597af596573e4b9f7a1d4ff80d689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9064274634844172853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa735a9264558d41907fb0a542ab6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1065720857048391081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03cee34077fc5348aba8618ea07a75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3555371892049252899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a767d4188346a004bb2bb123f7858102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxSearchAmount: 2
+--- !u!114 &5877119865199788972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757cf660a1375e4daa40abb5869b13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VisionConeMaterial: {fileID: 2100000, guid: ac51889dae1444b4a9d426df27c4cdc9, type: 2}
+  VisionRange: 10
+  VisionAngle: 120
+  VisionObstructingLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  VisionConeResolution: 30
 --- !u!1001 &7728825629873964107
 PrefabInstance:
   m_ObjectHideFlags: 0

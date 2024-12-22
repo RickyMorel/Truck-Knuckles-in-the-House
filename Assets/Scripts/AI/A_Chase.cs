@@ -11,15 +11,15 @@ public class A_Chase : A_Base
     #region Private Variables
 
     private NavMeshAgent _agent;
-    private PlayerController _player;
     private bool _isAttacking;
 
     #endregion
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         _agent = GetComponent<NavMeshAgent>();
-        _player = FindObjectOfType<PlayerController>();
     }
 
     public override void StartAction()
@@ -31,14 +31,18 @@ public class A_Chase : A_Base
     {
         if(_isAttacking) { return; }
 
+        CheckSwitchAction();
+
+        if(!_aiCues.Player) { return; }
+
         ChasePlayer();
     }
 
     private void ChasePlayer()
     {
-        float distanceFromPlayer = Vector3.Distance(_player.transform.position, transform.position);
+        float distanceFromPlayer = Vector3.Distance(_aiCues.Player.transform.position, transform.position);
 
-        _agent.SetDestination(_player.transform.position);
+        _agent.SetDestination(_aiCues.Player.transform.position);
 
         if (distanceFromPlayer <= _agent.stoppingDistance) { StartCoroutine(AttackPlayer()); }
     }
@@ -57,5 +61,7 @@ public class A_Chase : A_Base
     public override void CheckSwitchAction()
     {
         base.CheckSwitchAction();
+
+        if(!_aiCues.Player) { _aiStateMachine.DoSearch(); }
     }
 }
