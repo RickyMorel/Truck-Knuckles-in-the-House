@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7793107816961250765}
   - component: {fileID: 2725929718475729878}
+  - component: {fileID: 9055822163639216839}
   - component: {fileID: 2954150019425192450}
   - component: {fileID: 4717070694591887728}
   - component: {fileID: 2306009999332051920}
@@ -51,7 +52,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 160
@@ -63,6 +64,28 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &9055822163639216839
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3519169bb371980439ea4be391a9e8d2, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7dd56e9cb2492d04db3d6a22d4b13a02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2954150019425192450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03cee34077fc5348aba8618ea07a75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackDistance: 1.7
 --- !u!114 &3555371892049252899
 MonoBehaviour:
   m_ObjectHideFlags: 0

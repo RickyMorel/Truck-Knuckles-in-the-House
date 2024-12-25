@@ -6,6 +6,8 @@ public class A_Chase : A_Base
 {
     #region Editor Fields
 
+    [SerializeField] private float _attackDistance = 3f;
+
     #endregion
 
     #region Private Variables
@@ -44,7 +46,7 @@ public class A_Chase : A_Base
 
         _agent.SetDestination(_aiCues.Player.transform.position);
 
-        if (distanceFromPlayer <= _agent.stoppingDistance) { StartCoroutine(AttackPlayer()); }
+        if (distanceFromPlayer <= _attackDistance) { StartCoroutine(AttackPlayer()); }
     }
 
     private IEnumerator AttackPlayer()
@@ -53,9 +55,15 @@ public class A_Chase : A_Base
 
         Debug.Log("ATTACK!");
 
+        _agent.isStopped = true;
+
+        _aiStateMachine.Anim.Play("PunchAttack", 0);
+
         yield return new WaitForSeconds(4f);
 
         _isAttacking = false;
+
+        _agent.isStopped = false;
     }
 
     public override void CheckSwitchAction()

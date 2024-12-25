@@ -126,9 +126,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5877119865199788972, guid: d1ef637dd7ff9854f8a08a2b06d3d5af, type: 3}
-      propertyPath: VisionAngle
-      value: 140
+    - target: {fileID: 1065720857048391081, guid: d1ef637dd7ff9854f8a08a2b06d3d5af, type: 3}
+      propertyPath: _attackDistance
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6097103054295528196, guid: d1ef637dd7ff9854f8a08a2b06d3d5af, type: 3}
       propertyPath: m_Name
@@ -173,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 7793107816961250765, guid: d1ef637dd7ff9854f8a08a2b06d3d5af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055822163639216839, guid: d1ef637dd7ff9854f8a08a2b06d3d5af, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
