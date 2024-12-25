@@ -34,7 +34,7 @@ public class A_Search : A_Base
         base.StartAction();
 
         _currentSearchAmount = 0;
-        _relevantSearchPoints = FindObjectsOfType<SearchPoint>().ToList();
+        _relevantSearchPoints = RoomManager.Instance.CurrentRoomPlayerIsAt.SearchPoints.ToList();
     }
 
     public override void DoAction()

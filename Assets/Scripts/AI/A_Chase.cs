@@ -62,6 +62,6 @@ public class A_Chase : A_Base
     {
         base.CheckSwitchAction();
 
-        if(!_aiCues.Player) { _aiStateMachine.DoSearch(); }
+        if(!_aiCues.Player) { _aiStateMachine.DoGoToPlayerLastSeenSpot(); }
     }
 }
