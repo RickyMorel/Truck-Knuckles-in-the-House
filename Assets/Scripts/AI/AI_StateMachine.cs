@@ -11,11 +11,16 @@ public class AI_StateMachine : MonoBehaviour
     #region Private Variables
 
     private A_Base _currentAction;
+    private AI_Cues _aiCues;
+
+    private float gizmoTimer = 0.0f;
 
     #endregion
 
     void Start()
     {
+        _aiCues = GetComponent<AI_Cues>();
+
         DoNewAction(_actions[0]);   
     }
 
@@ -23,7 +28,12 @@ public class AI_StateMachine : MonoBehaviour
     {
         if(!_currentAction) { return; }
 
-        _currentAction.DoAction();   
+        _currentAction.DoAction();
+
+        if (gizmoTimer > 0)
+        {
+            gizmoTimer -= Time.deltaTime;
+        }
     }
 
     private void DoNewAction(A_Base actionToDo)
@@ -36,4 +46,24 @@ public class AI_StateMachine : MonoBehaviour
     public void DoPatrol() { DoNewAction(_actions[0]); }
     public void DoChase() { DoNewAction(_actions[1]); }
     public void DoSearch() { DoNewAction(_actions[2]); }
+    public void DoGoToPlayerLastSeenSpot() 
+    {
+        Vector3 lastSeenSpot = FindObjectOfType<PlayerController>().transform.position;
+
+        _aiCues.SetPlayerLastSeenSpot(lastSeenSpot); 
+
+        DoNewAction(_actions[3]);
+
+        gizmoTimer = 2f;
+    }
+
+    void OnDrawGizmos()
+    {
+        if(gizmoTimer <= 0.0f) { return; }
+
+        Vector3 lastSeenSpot = _aiCues.PlayerLastSeenPosition;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(lastSeenSpot, 0.5f);
+    }
 }
