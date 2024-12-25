@@ -16,7 +16,7 @@ public class AI_StateMachine : MonoBehaviour
 
     void Start()
     {
-        DoNewAction(_actions[2]);   
+        DoNewAction(_actions[0]);   
     }
 
     void Update()
