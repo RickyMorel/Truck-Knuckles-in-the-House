@@ -14,10 +14,10 @@ TagManager:
   - PostProcesing
   - camnodetect
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Grabbing
+  - Grabbable
+  - Hand
+  - HandPlayer
   - 
   - 
   - 
