@@ -6,12 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/AutoHand/Examples/Scenes/FinalIK (Full Body)/Demo (BETA).unity
+    guid: 15b1b958630b36b45ad5d22e80afc709
+  - enabled: 0
     path: Assets/Menu.unity
     guid: f871f5dbbd2ca004dbc05426dbcca79d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Save.unity
     guid: c2a7f2e78be508945a8e5e02c7537732
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 664a0e727c216754db0e54cc131f8dd9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2d98edf183f65c2468ce4b7f52997124, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 04e2f90d5a4e8994b8bdf736fefcb81d, type: 2}

@@ -1,0 +1,5 @@
+D:/UNITY PROJECTS/Truck Knuckles in the House/.utmp/RelWithDebInfo/3y1e14g3/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/UNITY PROJECTS/Truck Knuckles in the House/.utmp/RelWithDebInfo/3y1e14g3/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/UNITY PROJECTS/Truck Knuckles in the House/.utmp/RelWithDebInfo/3y1e14g3/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/UNITY PROJECTS/Truck Knuckles in the House/.utmp/RelWithDebInfo/3y1e14g3/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/UNITY PROJECTS/Truck Knuckles in the House/.utmp/RelWithDebInfo/3y1e14g3/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
