@@ -2,82 +2,86 @@ using System;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.VFX.VFXTypeAttribute;
 
-public class Safepuzzle : MonoBehaviour
+public class SafePuzzle : MonoBehaviour
 {
-    public String Needednumber = "1449";
-    public String Currentnumber;
-    public bool OpenSafe;
-    [SerializeField] TMP_Text _numbers;
-    [SerializeField] public GameObject numbersObj;
-    [SerializeField] public GameObject Accepted;
-    [SerializeField] public GameObject Denied;
-    [SerializeField] public GameObject Keypad;
-    [SerializeField] public GameObject LightGreen;
-    [SerializeField] public GameObject LightRed;
 
-    private float _distance;
+    #region Editor Fields
 
+    [SerializeField] private TMP_Text _numbers;
+    [SerializeField] private GameObject _Keypad;
+    [SerializeField] private GameObject _LightGreen;
+    [SerializeField] private GameObject _LightRed;
     [SerializeField] private Transform _safeDoor;
     [SerializeField] private Transform _player;
-
     [SerializeField] private Material _coloroff;
     [SerializeField] private Material _colorOnGreen;
     [SerializeField] private Material _colorOnRed;
+    [SerializeField] private GameObject Accepted;
+    [SerializeField] private GameObject Denied;
+    [SerializeField] private GameObject _numbersObj;
 
-    public bool CanPutInCode;
+    #endregion
 
-    [SerializeField] public int numsin;
-    void Start()
+    #region Priveat Propiertie
+
+    private string _needednumber = "1449";
+    private string _currentNumber;
+    private int _inputCounter;
+
+    #endregion
+
+    public void UpdateText()
     {
-        
+        _numbers.text = _currentNumber;
     }
-
-    void Update()
+    public void TryOpenSafe()
     {
-        _distance = Vector3.Distance(_player.position, _safeDoor.position);
-        if (_distance > 2)
+        if (_currentNumber == _needednumber)
         {
-           CanPutInCode = false;
-
-            return;
+            _numbersObj.SetActive(false);
+            Accepted.SetActive(true);
+            _currentNumber = null;
+            _Keypad.transform.parent = _safeDoor;
+            _LightGreen.GetComponent<MeshRenderer>().material = _colorOnGreen;
+            _LightRed.GetComponent<MeshRenderer>().material = _coloroff;
+            _safeDoor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            _safeDoor.Rotate(0, 0, 40, Space.Self);
         }
         else 
         {
-            CanPutInCode = true;
-        }
-        _numbers.text = Currentnumber;
-
-        if (Currentnumber == Needednumber)
-        {
-            Debug.Log("abc");
-        }
-        if (OpenSafe)
-        {
-            Debug.Log("cba");
-        }
-        if(Currentnumber == Needednumber && OpenSafe)
-        {
-            numbersObj.SetActive(false);
-            Accepted.SetActive(true);
-            Currentnumber = null;
-            Keypad.transform.parent = _safeDoor;
-            LightGreen.GetComponent<MeshRenderer>().material = _colorOnGreen;
-            LightRed.GetComponent<MeshRenderer>().material = _coloroff;
-            _safeDoor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            _safeDoor.Rotate(0, 0, 40, Space.Self);
-            OpenSafe = false;
-        }
-        else if (OpenSafe)
-        {
-            numbersObj.SetActive(false);
+            _numbersObj.SetActive(false);
             Denied.SetActive(true);
-            OpenSafe = false;
-            Currentnumber = null;
-            numsin = 0;
-            return;
+            _currentNumber = null;
+            _inputCounter = 0;
         }
-       
+
+        UpdateText();
     }
-    
+    public void ResetNumbers()
+    {
+        _currentNumber = null;
+        _numbersObj.SetActive(true);
+        Denied.SetActive(false);
+        _inputCounter = 0;
+        UpdateText();
+    }
+    public void CheckResetSafe()
+    {
+        if (_inputCounter < 4) return;
+
+        _currentNumber = null;
+        _inputCounter = 0;
+        UpdateText();
+    }
+    public void ChangeNumber(string input)
+    {
+
+        _inputCounter++;
+        _currentNumber = _currentNumber + input;
+        _numbersObj.SetActive(true);
+        Denied.SetActive(false);
+        UpdateText();
+    }
 }

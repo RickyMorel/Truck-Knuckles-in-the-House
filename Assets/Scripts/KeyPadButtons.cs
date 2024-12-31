@@ -3,50 +3,32 @@ using UnityEngine;
 
 public class KeyPadButtons : MonoBehaviour
 {
-    [SerializeField] Safepuzzle safe;
-    [SerializeField] string codeinsert;
-    [SerializeField] bool isenter;
-    [SerializeField] bool iscancel;
-    void Start()
-    {
-        
-    }
+    #region Editor Fields
 
-    // Update is called once per frame
-    void Update()
-    {
+    [SerializeField] private SafePuzzle _safe;
+    [SerializeField] private string _codeInsert;
+    [SerializeField] private bool _isEnterButton;
+    [SerializeField] private bool _isCancelButton;
 
-    }
+    #endregion
+
     private void OnMouseDown()
     {
-        if (safe.numsin == 4 && !isenter)
+        if (_isEnterButton)
         {
-            safe.Currentnumber = null;
-            safe.numsin = 0;
+            _safe.TryOpenSafe();
         }
-        if (isenter)
+
+        if (_isCancelButton)
         {
-            safe.OpenSafe = true;
+            _safe.ResetNumbers();
             return;
         }
-        else if (isenter && safe.Currentnumber != safe.Needednumber)
+
+        if (!_isEnterButton)
         {
-            safe.Currentnumber = null;
-        }
-        if (iscancel)
-        {
-            safe.Currentnumber = null;
-            safe.numbersObj.SetActive(true);
-            safe.Denied.SetActive(false);
-            safe.numsin = 0;
-            return;
-        }
-        if (safe.CanPutInCode && !isenter)
-        {
-            safe.numsin++;
-            safe.Currentnumber = safe.Currentnumber + codeinsert;
-            safe.numbersObj.SetActive(true);
-            safe.Denied.SetActive(false);
+            _safe.CheckResetSafe();
+            _safe.ChangeNumber(_codeInsert);
 
         }
     }
