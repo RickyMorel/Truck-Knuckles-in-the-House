@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject _doorObj;
     [SerializeField] private Transform _snapPoint1;
     [SerializeField] private Transform _snapPoint2;
+    private float _distance;
 
     #endregion
 
