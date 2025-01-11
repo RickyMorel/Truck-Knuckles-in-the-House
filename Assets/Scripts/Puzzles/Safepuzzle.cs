@@ -13,7 +13,7 @@ public class SafePuzzle : MonoBehaviour
     [SerializeField] private GameObject _Keypad;
     [SerializeField] private GameObject _LightGreen;
     [SerializeField] private GameObject _LightRed;
-    [SerializeField] private Transform _safeDoor;
+    [SerializeField] private Rigidbody _safeDoorRb;
     [SerializeField] private Transform _player;
     [SerializeField] private Material _coloroff;
     [SerializeField] private Material _colorOnGreen;
@@ -21,6 +21,7 @@ public class SafePuzzle : MonoBehaviour
     [SerializeField] private GameObject Accepted;
     [SerializeField] private GameObject Denied;
     [SerializeField] private GameObject _numbersObj;
+    [SerializeField] private Rigidbody[] _keypadButtonRbs;
 
     #endregion
 
@@ -40,14 +41,7 @@ public class SafePuzzle : MonoBehaviour
     {
         if (_currentNumber == _needednumber)
         {
-            _numbersObj.SetActive(false);
-            Accepted.SetActive(true);
-            _currentNumber = null;
-            _Keypad.transform.parent = _safeDoor;
-            _LightGreen.GetComponent<MeshRenderer>().material = _colorOnGreen;
-            _LightRed.GetComponent<MeshRenderer>().material = _coloroff;
-            _safeDoor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            _safeDoor.Rotate(0, 0, 40, Space.Self);
+            OpenSafe();
         }
         else 
         {
@@ -59,6 +53,23 @@ public class SafePuzzle : MonoBehaviour
 
         UpdateText();
     }
+
+    private void OpenSafe()
+    {
+        _numbersObj.SetActive(false);
+        Accepted.SetActive(true);
+        _currentNumber = null;
+        _LightGreen.GetComponent<MeshRenderer>().material = _colorOnGreen;
+        _LightRed.GetComponent<MeshRenderer>().material = _coloroff;
+        _safeDoorRb.isKinematic = false;
+
+        //Set button rbs to kinematic so they stay stuck to the door as it opens
+        foreach (Rigidbody rb in _keypadButtonRbs)
+        {
+            rb.isKinematic = true;
+        }
+    }
+
     public void ResetNumbers()
     {
         _currentNumber = null;

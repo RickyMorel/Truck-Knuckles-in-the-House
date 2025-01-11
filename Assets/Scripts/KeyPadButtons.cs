@@ -12,8 +12,10 @@ public class KeyPadButtons : MonoBehaviour
 
     #endregion
 
-    private void OnMouseDown()
+    public void OnPress()
     {
+        Debug.Log("MY CHIN IS HUGE");
+
         if (_isEnterButton)
         {
             _safe.TryOpenSafe();

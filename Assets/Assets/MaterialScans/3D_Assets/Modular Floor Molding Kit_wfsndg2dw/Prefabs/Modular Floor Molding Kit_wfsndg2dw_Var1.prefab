@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 8129851484157677667}
   - component: {fileID: 1693403574506264734}
   - component: {fileID: 6894953293167148387}
-  - component: {fileID: 2367022853455093843}
   m_Layer: 0
   m_Name: Aset_interior_combined_S_wfsndg2dw_00_LOD2
   m_TagString: Untagged
@@ -213,28 +212,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2367022853455093843
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4232823182158675263}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2096821562183659403, guid: f34e0bdd603165948bf4dd173bb7c17f, type: 3}
 --- !u!1 &5373621088475525435
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +223,6 @@ GameObject:
   - component: {fileID: 4498591404915018760}
   - component: {fileID: 731136465278878891}
   - component: {fileID: 54551287908116359}
-  - component: {fileID: 6911834037674556965}
   m_Layer: 0
   m_Name: Aset_interior_combined_S_wfsndg2dw_00_LOD0
   m_TagString: Untagged
@@ -322,28 +298,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6911834037674556965
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5373621088475525435}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1157148492153348733, guid: 45218028c694dab4885b40c182446e29, type: 3}
 --- !u!1 &6643939101006456567
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +341,6 @@ GameObject:
   - component: {fileID: 3990080596730921587}
   - component: {fileID: 2669265364558836034}
   - component: {fileID: 2500922241273729400}
-  - component: {fileID: 6132786076142809585}
   m_Layer: 0
   m_Name: Aset_interior_combined_S_wfsndg2dw_00_LOD4
   m_TagString: Untagged
@@ -463,25 +416,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6132786076142809585
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7519752381413404831}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1917533640997008936, guid: e293a337c276642438c290f526f924a8, type: 3}

@@ -218,7 +218,9 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6911834037674556965, guid: ef960855d57d02f4c860b0400939ecbf, type: 3}
+    - {fileID: 2367022853455093843, guid: ef960855d57d02f4c860b0400939ecbf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -304,7 +306,10 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6132786076142809585, guid: ef960855d57d02f4c860b0400939ecbf, type: 3}
+    - {fileID: 2367022853455093843, guid: ef960855d57d02f4c860b0400939ecbf, type: 3}
+    - {fileID: 6911834037674556965, guid: ef960855d57d02f4c860b0400939ecbf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
