@@ -4,5 +4,5 @@ using UnityEngine.UIElements;
 
 public class Book : MonoBehaviour
 {
-    [SerializeField] private string _bookname;
+    [SerializeField] public string _bookname;
 }

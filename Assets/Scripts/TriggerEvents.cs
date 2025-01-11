@@ -5,18 +5,18 @@ public class TriggerEvents : MonoBehaviour
 {
     #region Editor Fields
 
-    [SerializeField] private UnityEvent<Collider> _onTriggerEnter;
-    [SerializeField] private UnityEvent<Collider> _onTriggerEnd;
+    [SerializeField] private UnityEvent<Collider,GameObject> _onTriggerEnter;
+    [SerializeField] private UnityEvent<Collider,GameObject> _onTriggerExit;
 
     #endregion
 
     private void OnTriggerEnter(Collider other)
     {
-        _onTriggerEnter?.Invoke(other);
+        _onTriggerEnter?.Invoke(other,gameObject);
     }
 
-    private void OnTriggerEnd(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        _onTriggerEnd?.Invoke(other);
+        _onTriggerExit?.Invoke(other,gameObject);
     }
 }
