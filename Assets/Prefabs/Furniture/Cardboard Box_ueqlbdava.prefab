@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1445217410898302125}
   - component: {fileID: 7054580369397295562}
   - component: {fileID: 4292530963193856067}
-  - component: {fileID: 552565331708826544}
+  - component: {fileID: 2264157431975045586}
   m_Layer: 0
   m_Name: Cardboard Box_LOD0__ueqlbdava
   m_TagString: Untagged
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &552565331708826544
-MeshCollider:
+--- !u!65 &2264157431975045586
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,10 +105,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7973205153076437834, guid: 9a36132f2f3c1e14ba27d7daa845fb6a, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.19748111, y: 0.2000823, z: 0.19743153}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
 --- !u!1 &4337902294600279729
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +119,7 @@ GameObject:
   - component: {fileID: 4756944491221830567}
   - component: {fileID: 5810346294994542379}
   - component: {fileID: 1484471840585743690}
-  - component: {fileID: 2566882823258068231}
+  - component: {fileID: 4642310125044170088}
   m_Layer: 0
   m_Name: Cardboard Box_LOD2__ueqlbdava
   m_TagString: Untagged
@@ -196,8 +195,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2566882823258068231
-MeshCollider:
+--- !u!65 &4642310125044170088
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -214,10 +213,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2572888999947651132, guid: 521d44a5f0cd77e48ad065c9bed4630b, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.19735315, y: 0.20009005, z: 0.19746643}
+  m_Center: {x: -0.000039424747, y: -0.0000038705766, z: 0.00001744926}
 --- !u!1 &5172267053547420382
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +227,7 @@ GameObject:
   - component: {fileID: 2509278942572395205}
   - component: {fileID: 8420588976196428939}
   - component: {fileID: 3706855445995283345}
-  - component: {fileID: 474100271703026881}
+  - component: {fileID: 6710616321961020556}
   m_Layer: 0
   m_Name: Cardboard Box_LOD6__ueqlbdava
   m_TagString: Untagged
@@ -305,8 +303,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &474100271703026881
-MeshCollider:
+--- !u!65 &6710616321961020556
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -323,10 +321,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4692419119607209552, guid: e6a69c6c5be618e48b2edd6dd0488d0c, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.19768023, y: 0.19958565, z: 0.19516692}
+  m_Center: {x: -0.00018389896, y: -0.00027251616, z: 0.0010685734}
 --- !u!1 &5649678125665992233
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +402,7 @@ GameObject:
   - component: {fileID: 118970259621386183}
   - component: {fileID: 7996617910349046978}
   - component: {fileID: 7713697243912516228}
-  - component: {fileID: 2463299020846244624}
+  - component: {fileID: 3811952602347309446}
   m_Layer: 0
   m_Name: Cardboard Box_LOD4__ueqlbdava
   m_TagString: Untagged
@@ -481,8 +478,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2463299020846244624
-MeshCollider:
+--- !u!65 &3811952602347309446
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -499,7 +496,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3512502373936020076, guid: a704a88b88fbab94fb274d3dad8df8e6, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.1971936, y: 0.19976898, z: 0.19736664}
+  m_Center: {x: -0.0000060498714, y: -0.000231646, z: -0.00021405518}

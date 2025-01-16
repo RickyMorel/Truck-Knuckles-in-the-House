@@ -24,17 +24,35 @@ public class LightFliker : MonoBehaviour
 
         yield return new WaitForSeconds(num);
 
-        _meshRenderer.material = _materialOn;
-        _meshRendererlod1.material = _materialOn;
+        if(!_light.enabled)
+        {
+            _meshRenderer.material = _materialOn;
+            _meshRendererlod1.material = _materialOn;
+            _light.enabled = true;
+        }
+        else 
+        {
+            _meshRenderer.material = _materialOff;
+            _meshRendererlod1.material = _materialOff;
+            _light.enabled = false;
+        }
 
-        _light.enabled = true;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
 
-        _meshRenderer.material = _materialOff;
-        _meshRendererlod1.material = _materialOff;
+        if (_light.enabled)
+        {
+            _meshRenderer.material = _materialOff;
+            _meshRendererlod1.material = _materialOff;
+            _light.enabled = false;
+        }
+        else
+        {
+            _meshRenderer.material = _materialOn;
+            _meshRendererlod1.material = _materialOn;
+            _light.enabled = true;
+        }
 
-        _light.enabled = false;
 
         StartCoroutine(LightNoandOff());
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1320419405311544087}
   - component: {fileID: 7474628998554610479}
   - component: {fileID: 3898125563858438278}
-  - component: {fileID: 6909878407956547552}
+  - component: {fileID: 5848837634297822554}
   m_Layer: 0
   m_Name: Old Wooden Crate_LOD2__ukqncf3bw
   m_TagString: Untagged
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6909878407956547552
-MeshCollider:
+--- !u!65 &5848837634297822554
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,10 +105,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -225106834094534876, guid: b29a41239ca20ba49aed184202d29ef5, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.93934697, y: 0.46034813, z: 0.5127506}
+  m_Center: {x: -0.00040882826, y: 0.22262233, z: -0.00024157763}
 --- !u!1 &2726679368656959127
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +119,7 @@ GameObject:
   - component: {fileID: 7182471462710169834}
   - component: {fileID: 6876155167414449576}
   - component: {fileID: 428279333450566513}
-  - component: {fileID: 2001091529976547372}
+  - component: {fileID: 793710082540955877}
   m_Layer: 0
   m_Name: Old Wooden Crate_LOD0__ukqncf3bw
   m_TagString: Untagged
@@ -196,8 +195,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2001091529976547372
-MeshCollider:
+--- !u!65 &793710082540955877
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -214,10 +213,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2104811883326889764, guid: d693e0e4f3f0b324fba376ae1771b4f0, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.93927336, y: 0.4602798, z: 0.51328546}
+  m_Center: {x: -0.000007644296, y: 0.22269236, z: 0}
 --- !u!1 &5230176961063037117
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +227,7 @@ GameObject:
   - component: {fileID: 5726080541368738638}
   - component: {fileID: 2239758519400615923}
   - component: {fileID: 3928390767498726390}
-  - component: {fileID: 3437543398491277501}
+  - component: {fileID: 1175261193081501688}
   m_Layer: 0
   m_Name: Old Wooden Crate_LOD4__ukqncf3bw
   m_TagString: Untagged
@@ -305,8 +303,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3437543398491277501
-MeshCollider:
+--- !u!65 &1175261193081501688
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -323,10 +321,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1066488927788531214, guid: 09b60419e5b91a54aad02815ba7224b1, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.9404049, y: 0.45973942, z: 0.5130763}
+  m_Center: {x: -0.0006532222, y: 0.22292669, z: -0.0003195256}
 --- !u!1 &6471436641308089302
 GameObject:
   m_ObjectHideFlags: 0
