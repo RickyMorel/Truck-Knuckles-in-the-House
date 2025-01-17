@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +16,7 @@ public class AI_StateMachine : MonoBehaviour
     private AI_Cues _aiCues;
     private Animator _anim;
     private NavMeshAgent _agent;
+    private A_Base _prevAction;
 
     private float gizmoTimer = 0.0f;
 
@@ -54,14 +56,24 @@ public class AI_StateMachine : MonoBehaviour
         _anim.SetFloat("Moving", _agent.velocity.magnitude / _agent.speed);
     }
 
-    private void DoNewAction(A_Base actionToDo)
+    private void DoNewAction(A_Base actionToDo, Dictionary<string, object> data = null)
     {
-        actionToDo.StartAction();
+        _prevAction = _currentAction;
+
+        actionToDo.StartAction(data);
 
         _currentAction = actionToDo;
     }
 
+    public void DoPrevAction()
+    {
+        _prevAction.StartAction();
+
+        _currentAction = _prevAction;
+    }
+
     public void DoPatrol() { DoNewAction(_actions[0]); }
+
     public void DoChase() { DoNewAction(_actions[1]); }
     public void DoSearch() { DoNewAction(_actions[2]); }
     public void DoGoToPlayerLastSeenSpot() 
@@ -73,6 +85,16 @@ public class AI_StateMachine : MonoBehaviour
         DoNewAction(_actions[3]);
 
         gizmoTimer = 2f;
+    }
+    public void DoOpenDoor(Transform closestSnapPoint, Door door) 
+    {
+        if(_currentAction == _actions[4]) { return; }
+
+        Dictionary<string, object> data = new Dictionary<string, object>();
+        data["snapPoint"] = closestSnapPoint;
+        data["door"] = door;
+
+        DoNewAction(_actions[4], data); 
     }
 
     void OnDrawGizmos()

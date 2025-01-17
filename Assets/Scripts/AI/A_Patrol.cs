@@ -25,9 +25,9 @@ public class A_Patrol : A_Base
         _agent = GetComponent<NavMeshAgent>();
     }
 
-    public override void StartAction()
+    public override void StartAction(Dictionary<string, object> data = null)
     {
-        base.StartAction();
+        base.StartAction(data);
 
         _waypoints = FindObjectsOfType<Waypoint>().ToList();
     }

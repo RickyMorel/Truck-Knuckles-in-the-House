@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,9 +21,9 @@ public class A_GoLastSeenSpot : A_Base
         _agent = GetComponent<NavMeshAgent>();
     }
 
-    public override void StartAction()
+    public override void StartAction(Dictionary<string, object> data = null)
     {
-        base.StartAction();
+        base.StartAction(data);
     }
 
     public override void DoAction()

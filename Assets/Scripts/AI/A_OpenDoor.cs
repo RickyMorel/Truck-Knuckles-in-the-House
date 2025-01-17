@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,14 +7,16 @@ public class A_OpenDoor : A_Base
 {
     #region Editor Fields
 
-    [SerializeField] private float _attackDistance = 3f;
+    [SerializeField] private float _minOpenDistance = 2f;
 
     #endregion
 
     #region Private Variables
 
     private NavMeshAgent _agent;
-    private bool _isAttacking;
+    private Transform _currentSnapPoint;
+    private Door _currentDoor;
+    private bool _isOpeningDoor;
 
     #endregion
 
@@ -24,52 +27,56 @@ public class A_OpenDoor : A_Base
         _agent = GetComponent<NavMeshAgent>();
     }
 
-    public override void StartAction()
+    public override void StartAction(Dictionary<string, object> data = null)
     {
-        base.StartAction();
+        base.StartAction(data);
+
+        _currentSnapPoint = (Transform)data["snapPoint"];
+        _currentDoor = (Door)data["door"];
     }
 
     public override void DoAction()
     {
-        if(_isAttacking) { return; }
+        if (_isOpeningDoor) { return; }
 
-        CheckSwitchAction();
-
-        if(!_aiCues.Player) { return; }
-
-        OpenDoor();
+        OpenDoor(_currentSnapPoint, _currentDoor);
     }
 
-    private void OpenDoor()
+    private void OpenDoor(Transform snapPoint, Door door)
     {
-        float distanceFromPlayer = Vector3.Distance(_aiCues.Player.transform.position, transform.position);
+        float distanceFromDoor = Vector3.Distance(snapPoint.position, transform.position);
 
-        _agent.SetDestination(_aiCues.Player.transform.position);
+        _agent.SetDestination(snapPoint.position);
 
-        if (distanceFromPlayer <= _attackDistance) { StartCoroutine(AttackPlayer()); }
+        if (distanceFromDoor <= _minOpenDistance) { StartCoroutine(OpenDoorCoroutine(door)); }
     }
 
-    private IEnumerator AttackPlayer()
+    private IEnumerator OpenDoorCoroutine(Door door)
     {
-        _isAttacking = true;
+        _isOpeningDoor = true;
 
-        Debug.Log("ATTACK!");
+        Debug.Log("Open Door!");
 
         _agent.isStopped = true;
 
-        _aiStateMachine.Anim.Play("PunchAttack", 0);
+        _agent.velocity = Vector3.zero;
 
-        yield return new WaitForSeconds(4f);
+        _aiStateMachine.Anim.Play("UnlockDoor", 0);
 
-        _isAttacking = false;
+        yield return new WaitForSeconds(3.13f);
+
+        _isOpeningDoor = false;
 
         _agent.isStopped = false;
+
+        door.Open();
+
+        _aiStateMachine.DoPrevAction();
     }
+
 
     public override void CheckSwitchAction()
     {
         base.CheckSwitchAction();
-
-        if(!_aiCues.Player) { _aiStateMachine.DoGoToPlayerLastSeenSpot(); }
     }
 }
