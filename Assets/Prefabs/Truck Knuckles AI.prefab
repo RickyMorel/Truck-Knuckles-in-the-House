@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7793107816961250765}
   - component: {fileID: 2725929718475729878}
   - component: {fileID: 9055822163639216839}
+  - component: {fileID: 1293434372281677839}
+  - component: {fileID: 4551423259111240554}
   - component: {fileID: 2954150019425192450}
   - component: {fileID: 4717070694591887728}
   - component: {fileID: 2306009999332051920}
@@ -19,6 +21,7 @@ GameObject:
   - component: {fileID: 3555371892049252899}
   - component: {fileID: 8634539796814944775}
   - component: {fileID: 5877119865199788972}
+  - component: {fileID: 4817468192752312744}
   m_Layer: 0
   m_Name: Truck Knuckles AI
   m_TagString: Untagged
@@ -51,7 +54,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6097103054295528196}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -86,6 +89,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &1293434372281677839
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &4551423259111240554
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Height: 2.5549026
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7774513, z: 0}
 --- !u!114 &2954150019425192450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +156,7 @@ MonoBehaviour:
   - {fileID: 1065720857048391081}
   - {fileID: 3555371892049252899}
   - {fileID: 8634539796814944775}
+  - {fileID: 4817468192752312744}
 --- !u!114 &4717070694591887728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +252,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   VisionConeResolution: 30
+--- !u!114 &4817468192752312744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097103054295528196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c035ecfd801546845a95dc7e4c0d86cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minOpenDistance: 0.1
 --- !u!1001 &7728825629873964107
 PrefabInstance:
   m_ObjectHideFlags: 0
