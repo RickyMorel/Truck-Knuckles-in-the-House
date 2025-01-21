@@ -25,7 +25,7 @@ public class SafePuzzle : MonoBehaviour
 
     #endregion
 
-    #region Priveat Propiertie
+    #region Private Propierties
 
     private string _needednumber = "1449";
     private string _currentNumber;

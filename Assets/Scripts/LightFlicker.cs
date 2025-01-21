@@ -4,13 +4,14 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class LightFliker : MonoBehaviour
 {
+    #region Editor Fields
     [SerializeField] private Light _light;
     [SerializeField] private Material _materialOn;
     [SerializeField] private Material _materialOff;
     [SerializeField] private int _timerange = 2;
-
+    [SerializeField] private MeshRenderer _meshRendererlod1;
+    #endregion
     private MeshRenderer _meshRenderer;
-    [SerializeField]private MeshRenderer _meshRendererlod1;
 
     private void Start()
     {
