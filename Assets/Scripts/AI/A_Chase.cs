@@ -16,6 +16,7 @@ public class A_Chase : A_Base
     private NavMeshAgent _agent;
     private bool _isAttacking;
 
+
     #endregion
 
     public override void Start()
@@ -61,6 +62,8 @@ public class A_Chase : A_Base
         _aiStateMachine.Anim.Play("PunchAttack", 0);
 
         yield return new WaitForSeconds(4f);
+
+        PlayerRespawning.Instance.RespawnPlayer();
 
         _isAttacking = false;
 
