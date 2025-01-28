@@ -30,7 +30,11 @@ public class Bookshelf : MonoBehaviour
             gameObject.transform.parent.TryGetComponent<Rigidbody>(out Rigidbody parentRb);
             parentRb.isKinematic = false;
             parentRb.constraints = RigidbodyConstraints.None;
-            gameObject.transform.parent.GetComponent<BoxCollider>().enabled = true;
+            foreach(Book Book in FindObjectsOfType<Book>())
+            {
+                Destroy(Book.gameObject.GetComponent<Rigidbody>());
+                Book.gameObject.layer = 14;
+            }
             Debug.Log("All Books Placed Right");
         }
     }
@@ -43,7 +47,6 @@ public class Bookshelf : MonoBehaviour
             if (book._bookname == _bookNames[placePointIndex])
             {
                 _CorrectlyPlacedBooks--;
-                Debug.Log("tinymuscles");
             }
         }
         else
