@@ -16,15 +16,18 @@ public class SpawnPointsManager : MonoBehaviour
 
     #region Private Fields
 
-    private int _randomNumber;
     private List<Transform> _usedSpawnLocacions;
 
     #endregion
 
     void Start()
     {
+        SpawnItems();
+    }
+    void SpawnItems()
+    {
         _usedSpawnLocacions = new List<Transform>();
-
+        
         foreach (ItemSpawnData data in _itemAndSpawnLocacions)
         {
             List<Transform> validSpawnPoints = data.SpawnLocacions
@@ -39,6 +42,7 @@ public class SpawnPointsManager : MonoBehaviour
             }
         }
     }
+
     [Serializable]
     public class ItemSpawnData
     {
