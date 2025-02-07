@@ -1,11 +1,16 @@
 using Autohand;
+using RootMotion.Demos;
 using Unity.Collections;
 using UnityEngine;
 
 public class BookShelf : MonoBehaviour
 {
+    [SerializeField] MeshCollider _bookshelfMeshCol;
+    #region Privete Variables
 
     private int _correctlyPlacedBooks;
+
+    #endregion
     public void PlaceBook(Collider other,GameObject placePoint)
     {
 
@@ -51,7 +56,7 @@ public class BookShelf : MonoBehaviour
                 Destroy(Book.gameObject.GetComponent<Rigidbody>());
                 Book.gameObject.layer = 14;
             }
-            Debug.Log("All Books Placed Right");
+            _bookshelfMeshCol.convex = true;
         }
     }
 }
