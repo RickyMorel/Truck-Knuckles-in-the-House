@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PlayerRespawning : MonoBehaviour
@@ -75,7 +76,7 @@ public class PlayerRespawning : MonoBehaviour
 
         _playerCharacterController.enabled = false;
         _textOfDaysLeft.enabled = true;
-
+        Debug.Log("loaded numbs screen");
 
         yield return new WaitForSeconds(4);
 
@@ -105,15 +106,15 @@ public class PlayerRespawning : MonoBehaviour
         if (_currentDay > _lastDay)
         {
             _textMeshPro.text = "You Died";
-            return false;
+            return true;
         }
 
         if (_currentDay == _lastDay)
         {
             _lastDayText.enabled = true;
-            return true;
+            return false;
         }
-        return true;
+        return false;
 
     }
     public void RespawnPlayer()
